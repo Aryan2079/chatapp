@@ -1,11 +1,14 @@
-use DashMap;
+use dashmap::DashMap;
 use std::sync::Arc;
 use std::collections::HashSet;
+use tokio::sync::mpsc::UnboundedSender;
+use warp::ws::Message;
 
 pub type ClientId = String;
 pub type GroupId = String;
 pub type Topic = String;
 
+#[allow(dead_code)]
 pub struct AppState{
     pub clients: DashMap<ClientId, UnboundedSender<Message>>,
     pub groups: DashMap<GroupId, HashSet<ClientId>>,
