@@ -11,8 +11,8 @@ pub type Topic = String;
 #[allow(dead_code)]
 pub struct AppState{
     pub clients: DashMap<ClientId, UnboundedSender<Message>>,
-    pub groups: DashMap<GroupId, HashSet<ClientId>>,
-    pub topics: DashMap<Topic, HashSet<ClientId>>,
+    pub groups: DashMap<GroupId, HashSet<ClientId>>, //this is for the future implementation of group features.
+    pub topics: DashMap<Topic, HashSet<ClientId>>, //this is for the future implementation of topics based broadcasting feature.
     pub missed_messages: DashMap<ClientId, Vec<Message>>,
 }
 
