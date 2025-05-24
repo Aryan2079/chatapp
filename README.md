@@ -66,18 +66,6 @@ websocat ws://127.0.0.1:3030/ws
 websocat ws://127.0.0.1:3030/ws
 ```
 
-### Register both clients
-
-Send a registration message in each:
-
-```json
-{"type":"register", "id":"client-a"}
-```
-
-```json
-{"type":"register", "id":"client-b"}
-```
-
 ### Send a 1-to-1 message:
 
 In **client-a** terminal:
